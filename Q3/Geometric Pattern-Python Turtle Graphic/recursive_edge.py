@@ -17,3 +17,12 @@ def draw_edge(length, depth):
         turtle.forward(length)  # just draw straight line
         update_bounds()  # remember where we are
         return
+    length /= 3  # make the line shorter for next step
+
+    draw_edge(length, depth - 1)  # draw first small line
+    turtle.right(60)  # turn a little
+    draw_edge(length, depth - 1)  # draw second line
+    turtle.left(120)  # turn other way
+    draw_edge(length, depth - 1)  # draw third line
+    turtle.right(60)  # turn back
+    draw_edge(length, depth - 1)  # draw last line
