@@ -11,3 +11,9 @@ def update_bounds():
     max_x = max(max_x, x)
     min_y = min(min_y, y)
     max_y = max(max_y, y)
+# This is the main drawing line that can make itself smaller and repeat
+def draw_edge(length, depth):
+    if depth == 0:
+        turtle.forward(length)  # just draw straight line
+        update_bounds()  # remember where we are
+        return
