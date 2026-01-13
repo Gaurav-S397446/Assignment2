@@ -4,7 +4,11 @@ import turtle
 min_x = max_x = min_y = max_y = 0
 
 def update_bounds():
-    # Check turtle's place and save the farthest points
+    """
+    This function below checks where the turtle is right now.
+    It saves the left, right, top, and bottom limits of the drawing.
+    This helps us later to move the drawing to the center.
+    """
     global min_x, max_x, min_y, max_y
     x, y = turtle.position()
     min_x = min(min_x, x)
@@ -13,6 +17,12 @@ def update_bounds():
     max_y = max(max_y, y)
 # This is the main drawing line that can make itself smaller and repeat
 def draw_edge(length, depth):
+    """
+    This function below will draw one side of the shape.
+    If depth is 0, it draws a simple straight line.
+    If depth is more than 0, it breaks the line into smaller parts
+    and draws them again and again.
+    """
     if depth == 0:
         turtle.forward(length)  # just draw straight line
         update_bounds()  # remember where we are
