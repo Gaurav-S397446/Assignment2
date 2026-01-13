@@ -37,6 +37,7 @@ def encrypt(char, shift1, shift2):
 def shiftForward(positionFrom, shiftValue, char): # this function contains reusable code to optimize the code length
     """
     Shift a character forward within its 13 half.
+    This function encapsulates forward shifting of character to reduce code duplication
 
     Parameters:
         positionFrom (str): Starting character of the half alphabet 'a' for 1st half and 'n' for second half
@@ -53,6 +54,7 @@ def shiftForward(positionFrom, shiftValue, char): # this function contains reusa
 def shiftBackward(positionFrom, shiftValue, char):  # this function contains reusable code to optimize the code length
     """
     Shift a character backward within its 13 half.
+    This function encapsulates backward shifting of character to reduce code duplication
 
     Parameters:
         positionFrom (str): Starting character of the half alphabet 'a' for 1st half and 'n' for second half
@@ -69,6 +71,7 @@ def shiftBackward(positionFrom, shiftValue, char):  # this function contains reu
 def encryptFile(filename, shift1, shift2):
     """
     this function encrypts the text of a raw_text file and save the encrypted result to 'encrypted_text.txt'.
+    this function separates file read and write from encryption logic and makes code reuseable for different files and shift value
 
     Parameters:
         filename (str): Name of the input file (without extension)
