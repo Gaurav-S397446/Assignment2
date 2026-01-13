@@ -3,6 +3,15 @@ from decryption import decryptFile
 from verification import verify 
 
 def main():
+    """
+    This function performs file encryption, decryption, and verification.
+
+    --------------------------
+    - Handles user input for dynamic shift values.
+    - Calls encrypt and decrypt function from external package.
+    - Verifies that if decryption has restored to the original file content.
+    - It includes error handling to ensure only valid datatype are used for shifts.
+    """
     while True:
         try:
             shift1 = int(input("Enter shift1 value:"))
