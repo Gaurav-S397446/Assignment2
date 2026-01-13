@@ -30,3 +30,12 @@ def main():
     turtle.goto(-center_x, -center_y)  # move to top-left to center drawing
     turtle.setheading(0)  # face right
     turtle.pendown()
+    
+    turtle.showturtle()  # show the turtle now
+    turtle.tracer(1)  # turn animation back on
+
+    draw_polygon(sides, length, depth)  # draw the final visible picture
+
+    turtle.mainloop()  # keep the window open until user closes
+
+main()
