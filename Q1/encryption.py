@@ -3,27 +3,29 @@ def encrypt(char, shift1, shift2):
         return char
     if char.islower():
         if 'a' <= char <= 'm':
-            offset = ord(char) - ord('a')
             shiftVal = (shift1 * shift2) % 13
-            position = (offset + shiftVal) % 13
-            return chr(position + ord('a'))
+            return shiftForward('a',shiftVal,char)
         else:
-            offset = ord(char) - ord('n')
             shiftVal = (shift1 + shift2) % 13
-            position = (offset - shiftVal) % 13
-            return chr(position + ord('n'))
+            return shiftBackward('n',shiftVal, char)
     elif char.isupper():
         if 'A' <= char <= 'M':
-            offset = ord(char) - ord('A')
             shiftVal = shift1 % 13
-            position = (offset - shiftVal) % 13
-            return chr(position + ord('A'))
+            return shiftBackward('A',shiftVal,char)
         else:
-            offset = ord(char) - ord('N')
             shiftVal = (shift2 * shift2) % 13
-            position = (offset + shiftVal) % 13
-            return chr(position + ord('N'))
-        
+            return shiftForward('N',shiftVal, char)
+
+def shiftForward(positionFrom, shiftValue, char):
+    fwdOffset = ord(char) - ord(positionFrom)
+    fwdPosition = (fwdOffset + shiftValue) % 13
+    return chr(fwdPosition + ord(positionFrom))
+    
+def shiftBackward(positionFrom, shiftValue, char):
+    bckOffset = ord(char) - ord(positionFrom)
+    bckPosition = (bckOffset - shiftValue) % 13
+    return chr(bckPosition + ord(positionFrom))
+ 
 def encryptFile(filename, shift1, shift2):
     with open(f"{filename}.txt","r") as file:
         text = file.read()
