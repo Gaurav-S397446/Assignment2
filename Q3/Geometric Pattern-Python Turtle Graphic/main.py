@@ -20,3 +20,13 @@ def main():
 
     draw_polygon(sides, length, depth)  # draw once invisibly to measure bounds
 
+    # find the center of the drawing using the farthest points
+    center_x = (recursive_edge.min_x + recursive_edge.max_x) / 2
+    center_y = (recursive_edge.min_y + recursive_edge.max_y) / 2
+
+    # ---------- SECOND PASS (draw visible and centered) ----------
+    turtle.clear()  # remove first invisible drawing
+    turtle.penup()
+    turtle.goto(-center_x, -center_y)  # move to top-left to center drawing
+    turtle.setheading(0)  # face right
+    turtle.pendown()
