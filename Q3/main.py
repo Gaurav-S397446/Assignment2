@@ -3,7 +3,7 @@ import recursive_edge  # this has our drawing function and keeps track of min/ma
 from polygon import draw_polygon  # this draws the whole polygon using recursive edges
 
 def main():
-    """
+    """ 
     This is the main function of the program.
     It asks the user for input to prepares the turtle, and  
     draws the shape invisibly first to measure size so that

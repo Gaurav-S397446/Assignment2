@@ -4,7 +4,7 @@ import turtle
 min_x = max_x = min_y = max_y = 0
 
 def update_bounds():
-    """
+    """ 
     This function below checks where the turtle is right now.
     It saves the left, right, top, and bottom limits of the drawing.
     This helps us later to move the drawing to the center.
