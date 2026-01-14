@@ -1,20 +1,20 @@
 import turtle
 import recursive_edge  # this has our drawing function and keeps track of min/max positions
 from polygon import draw_polygon  # this draws the whole polygon using recursive edges
+
 def main():
     """
     This is the main function of the program.
     It asks the user for input to prepares the turtle, and  
     draws the shape invisibly first to measure size so that
-   it can redraw properly in the centre. 
+    it can redraw properly in the centre. 
     """
     # Ask user for input
     sides = int(input("Enter the number of sides: "))  # how many sides the polygon will have
     length = int(input("Enter the side length: "))  # how long each side is
     depth = int(input("Enter the recursion depth: "))  # how detailed the edges should be
 
-    turtle.speed()  # make the turtle draw fast
-    turtle.shape("turtle")  # show the turtle icon
+    turtle.speed(6)  # make the turtle draw normal
     turtle.tracer(0, 0)  # stop animation for first invisible pass (faster) 
     
      #  FIRST PASS (measure size, invisible)
@@ -44,4 +44,5 @@ def main():
 
     turtle.mainloop()  # keep the window open until user closes
 
-main()
+if __name__ == "__main__":
+    main()
