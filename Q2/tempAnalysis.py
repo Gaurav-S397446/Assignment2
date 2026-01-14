@@ -3,11 +3,7 @@ temp_utils.py
 This file contains all helper functions used for temperature analysis.
 Only user-defined functions are used.
 """
-
-import csv
 import math
-import os
-
 
 def is_valid_number(value):
     """
