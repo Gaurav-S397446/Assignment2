@@ -8,7 +8,7 @@ def decrypt(char, shift1, shift2):
         * Lowercase 'n'-'z': forward shift by (shift1 + shift2)
         * Uppercase 'A'-'M': forward shift by shift1
         * Uppercase 'N'-'Z': backward shift by (shift2^2)
-    - Non-alphabetic characters or special characters are returned unchanged.
+    - Non-alphabetic characters or special characters are returned unchanged. 
 
     Parameters:
         char (str): character to encrypt
